@@ -115,7 +115,7 @@
     "client.MixinCamera",
     "client.MixinMinecraft",
     "client.gui.screens.MixinConnectScreen",
-    "client.multiplayer.MixinClientPacketListener",
+
     "client.player.MixinLocalPlayer",
     "client.player.MixinPlayer",
     "client.renderer.MixinGameRenderer",
@@ -130,7 +130,7 @@
     "feature.render_leashes.MixinMobRenderer",
     "feature.render_pathfinding.MixinDebugRenderer",
     "feature.render_ship_debug_bb.MixinDebugRenderer",
-    "feature.seamless_copy.MixinClientPacketListener",
+
     "feature.shipyard_entities.MixinClientLevel",
     "feature.shipyard_entities.MixinEntityRenderDispatcher",
     "feature.sound.client.MixinChannel",
@@ -169,8 +169,8 @@
     "mod_compat.optifine.RenderChunkInfoAccessorOptifine",
     "mod_compat.optifine_vanilla.MixinLevelRenderer",
     "mod_compat.sodium.MixinChunkTracker",
-    "mod_compat.sodium.MixinRegionChunkRenderer",
-    "mod_compat.sodium.MixinRenderSectionManager",
+
+
     "mod_compat.sodium.MixinSodiumWorldRenderer",
     "mod_compat.sound_physics_remastered.MixinSoundPhysics",
     "mod_compat.vanilla_renderer.MixinLevelRendererVanilla",

@@ -44,7 +44,7 @@ public class MixinSodiumWorldRenderer {
      * @reason Fix ship ghosts when ships are deleted and camera hasn't moved, and ships not rendering when teleported
      * and camera hasn't moved
      */
-    @Inject(method = "updateChunks", at = @At("HEAD"))
+    @Inject(method = "setupTerrain", at = @At("HEAD"))
     private void preUpdateChunks(final CallbackInfo callbackInfo) {
         final boolean curFrameHasShips =
             !VSGameUtilsKt.getShipObjectWorld(Minecraft.getInstance()).getLoadedShips().isEmpty();
@@ -55,8 +55,9 @@ public class MixinSodiumWorldRenderer {
         vs$prevFrameHadShips = curFrameHasShips;
     }
 
-    @Redirect(method = "renderTileEntities", at = @At(value = "INVOKE",
-        target = "Lnet/minecraft/client/renderer/blockentity/BlockEntityRenderDispatcher;render(Lnet/minecraft/world/level/block/entity/BlockEntity;FLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;)V"))
+    /*
+    @Redirect(method = "renderBlockEntities", at = @At(value = "INVOKE"))
+    //target = BlockEntityRenderDispatcher.render(E, float, PoseStack, MultiBufferSource)
     private void renderShipChunkBlockEntity(final BlockEntityRenderDispatcher instance, final BlockEntity blockEntity,
         final float partialTicks, final PoseStack matrixStack, final MultiBufferSource buffer, final PoseStack matrices,
         final RenderBuffers bufferBuilders,
@@ -74,14 +75,17 @@ public class MixinSodiumWorldRenderer {
         }
         instance.render(blockEntity, tickDelta, matrixStack, buffer);
     }
+    */
 
     /**
      * Fix entities in ships not rendering when Sodium is installed
      */
+    /*
     @Inject(method = "doesChunkHaveFlag", at = @At("HEAD"), cancellable = true, remap = false)
     private void preDoesChunkHaveFlag(final int x, final int z, final int status, final CallbackInfoReturnable<Boolean> cir) {
         if (VSGameUtilsKt.isChunkInShipyard(world, x, z)) {
             cir.setReturnValue(true);
         }
     }
+    */
 }

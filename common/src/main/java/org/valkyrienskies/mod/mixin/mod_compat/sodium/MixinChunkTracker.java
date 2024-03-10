@@ -1,7 +1,7 @@
 package org.valkyrienskies.mod.mixin.mod_compat.sodium;
 
 import it.unimi.dsi.fastutil.longs.Long2IntOpenHashMap;
-import me.jellysquid.mods.sodium.client.render.chunk.ChunkTracker;
+import me.jellysquid.mods.sodium.client.render.chunk.map.ChunkTracker;
 import net.minecraft.world.level.ChunkPos;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
